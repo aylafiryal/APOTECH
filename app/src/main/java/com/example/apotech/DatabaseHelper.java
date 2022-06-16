@@ -36,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String CREATE_TABLE_OBAT = "CREATE TABLE " + TABLE_OBAT +
-                " (" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                " (" + KEY_ID + " INTEGER PRIMARY KEY, " +
                 KEY_NamaObat + " TEXT," +
                 KEY_Farmasi + " TEXT," +
                 KEY_ExpireDate + " TEXT," +
@@ -57,9 +57,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertObat(String namaObat, String farmasi, String expireDate, int harga, int stok){
+    public boolean insertObat(int id, String namaObat, String farmasi, String expireDate, int harga, int stok){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("KEY_ID", id);
         contentValues.put("KEY_NamaObat", namaObat);
         contentValues.put("KEY_Farmasi", farmasi);
         contentValues.put("KEY_ExpireDate", expireDate);
@@ -72,5 +73,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-
 }

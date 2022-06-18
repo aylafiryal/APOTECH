@@ -20,14 +20,17 @@ public class MainActivity extends AppCompatActivity {
         pasien = new Akun();
         obat = new Obat();
 
+        // Insert data kategori sakit
         int [] idSakit_array = {1, 2, 3, 4, 5};
         String [] jenisSakit_array = {"COVID", "Demam", "Batuk Pilek", "Pusing", "Letih"};
         for(int i = 0; i < idSakit_array.length; i++){
             db.insert_jenisSakit(idSakit_array[i], jenisSakit_array[i]);
         }
 
+        // Insert data akun pasien
         db.insert_Akun(pasien.getId_pasien(), pasien.getNama(), pasien.getAlamat());
 
+        // Insert data obat
         int index_expireDate = 0;
         int index_stok = 0;
         int index_idSakit = 0;

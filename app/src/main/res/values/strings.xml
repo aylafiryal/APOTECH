@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">APOTECH</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus posuere ligula ipsum, eu lobortis odio efficitur vestibulum.
+        Sed fermentum lorem non mattis lacinia. Ut consectetur, lorem id ultricies viverra,
+        purus erat luctus magna, sit amet accumsan lectus augue a leo.
+        Maecenas sit amet ex vitae erat interdum pharetra.
+        Praesent facilisis, ex vel venenatis laoreet, erat tellus maximus justo,
+        in convallis nulla ligula et lorem. Nulla at lectus augue.
+        Phasellus fringilla sodales placerat. Curabitur varius bibendum dui,
+        eget viverra tortor volutpat vel. In sed placerat ipsum, at blandit dui.
+        Sed a sapien sit amet quam venenatis dictum nec vitae purus. Curabitur molestie mauris leo,
+        vel volutpat augue pharetra at. Pellentesque sed faucibus ipsum.
+        Mauris sit amet metus non nunc porta semper. Vestibulum efficitur, risus a
+        malesuada ullamcorper, felis enim malesuada nisl, ut efficitur massa eros vel magna.
+        Aliquam eget condimentum justo, non auctor nibh. Nulla id rhoncus justo.
+    </string>
 </resources>

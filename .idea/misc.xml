@@ -3,7 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/font/open_sans.xml" value="0.14010416666666667" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/activity_keranjang_belanja.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/activity_main_2.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/activity_selesai.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/daftar_deskripsi_obat.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/daftar_katalog_obat.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/daftar_obat.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/daftar_pesanan_obat.xml" value="0.4" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/halaman_deskripsi_obat.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/halaman_pembayaran.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/halaman_pesanan.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/halaman_selesai_pembayaran.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/halaman_utama.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/halaman_utama_2.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/katalog_obat_item.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/Folder Alya/Documents/Kuliah/Semester 6/Android/APOTECH/app/src/main/res/layout/order_obat_item.xml" value="0.12158054711246201" />
       </map>
     </option>
   </component>

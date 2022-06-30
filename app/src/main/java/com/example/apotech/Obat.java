@@ -1,75 +1,80 @@
 package com.example.apotech;
 
 public class Obat {
-    int id_obat, harga, stok;
-    String nama_obat, farmasi, expire_date;
+    int [] id_sakit = {
+            1, 2, 3, 4, 5
+    };
+    int [] id_obat = {
+            1, 2, 3,
+            4, 5, 6,
+            7, 8, 9,
+            10, 11, 12,
+            13, 14, 15
+    };
+    String [] nama_obat = {
+            "Avigan (Favipiravir)", "Octagam 10%", "Stromectol",
+            "Paracetamol", "Aspirin", "Ibuprofen",
+            "Benadryl", "Bodrexin Pilek Alergi", "Paramex Flu Batuk",
+            "Panadol Extra", "Panadol", "Oskadon",
+            "Enervon-C Multivitamin", "Sangobion", "Holisticare Ester C"
+    };
+    String [] farmasi = {
+            "Avigan", "Octapharma Pharmazeutika", "Merck Sharp Dohme",
+            "Pfizer Consumer Healthcare", "Bayer", "BASF",
+            "Johnson & Johnson", "Tempo Scan Pacific", "Konimex",
+            "Sterling", "Tempo Scan Pacific", "Sterling",
+            "Darya-Varia", "P&G Health", "Indocare"
+    };
+    String [] expire_date = {
+            "1 April 2024",
+            "1 Mei 2024",
+            "1 Juni 2024",
+            "1 Agustus 2024",
+            "1 November 2024",
+            "1 Desember 2024"
+    };
+    int [] harga = {
+            22500, 80000, 25000,
+            4500, 19000, 24000,
+            23500, 1500, 10000,
+            11500, 1500, 9500,
+            4000, 6000, 30000
+    };
+    int [] stok = {
+            10, 30, 50, 90, 100, 150
+    };
 
     public Obat(){
 
     }
 
-    public Obat(int harga, int stok, String nama_obat, String farmasi, String expire_date) {
-        this.harga = harga;
-        this.stok = stok;
-        this.nama_obat = nama_obat;
-        this.farmasi = farmasi;
-        this.expire_date = expire_date;
+    public int getId_obat(int i) {
+        return id_obat[i];
     }
 
-    public Obat(int id_obat, int harga, int stok, String nama_obat, String farmasi, String expire_date) {
-        this.id_obat = id_obat;
-        this.harga = harga;
-        this.stok = stok;
-        this.nama_obat = nama_obat;
-        this.farmasi = farmasi;
-        this.expire_date = expire_date;
+    public String getNama_obat(int i) {
+        return nama_obat[i];
     }
 
-    public void setId_obat(int id_obat) {
-        this.id_obat = id_obat;
+    public String getFarmasi(int i) {
+        return farmasi[i];
     }
 
-    public void setHarga(int harga) {
-        this.harga = harga;
+    public String getExpire_date(int i) {
+        return expire_date[i];
     }
 
-    public void setStok(int stok) {
-        this.stok = stok;
+    public int getHarga(int i) {
+        return harga[i];
     }
 
-    public void setNama_obat(String nama_obat) {
-        this.nama_obat = nama_obat;
+    public int getStok(int i) {
+        return stok[i];
     }
 
-    public void setFarmasi(String farmasi) {
-        this.farmasi = farmasi;
+    public int getId_sakit(int i){
+        return id_sakit[i];
     }
 
-    public void setExpire_date(String expire_date) {
-        this.expire_date = expire_date;
-    }
 
-    public int getId_obat() {
-        return id_obat;
-    }
-
-    public int getHarga() {
-        return harga;
-    }
-
-    public int getStok() {
-        return stok;
-    }
-
-    public String getNama_obat() {
-        return nama_obat;
-    }
-
-    public String getFarmasi() {
-        return farmasi;
-    }
-
-    public String getExpire_date() {
-        return expire_date;
-    }
 }

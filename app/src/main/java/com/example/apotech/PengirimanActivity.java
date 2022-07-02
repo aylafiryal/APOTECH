@@ -28,7 +28,7 @@ public class PengirimanActivity extends AppCompatActivity {
                 startActivity(new Intent(PengirimanActivity.this, MainActivity.class));
             }
         });
-
+    }
 }
 
 

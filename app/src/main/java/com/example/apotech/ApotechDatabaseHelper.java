@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ApotechDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "APOTECHDB_14.db";
+    private static final String DATABASE_NAME = "APOTECHDB_19.db";
     private static final int DATABASE_VERSION = 1;
 
     public ApotechDatabaseHelper(Context context) {
@@ -29,6 +29,7 @@ public class ApotechDatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("create table Akun(id_akun integer primary key, nama text, alamat text)");
         sqLiteDatabase.execSQL("create table Pesanan(id_pesanan integer primary key, id_obat integer, id_akun integer, foreign key (id_obat) references Obat(id_obat), foreign key (id_akun) references Akun(id_akun))");
         sqLiteDatabase.execSQL("create table Transaksi(id_transaksi integer primary key, jumlah_pesanan integer, tanggal_pembelian text, biaya integer, id_pesanan integer, id_akun integer, foreign key (id_pesanan) references Pesanan(id_pesanan), foreign key (id_akun) references Akun(id_akun))");
+        sqLiteDatabase.execSQL("create table Riwayat(nama_obat text, harga_obat integer)");
     }
 
     @Override
@@ -81,8 +82,18 @@ public class ApotechDatabaseHelper extends SQLiteOpenHelper {
         long data = db.insert("Pesanan", null, contentValues);
     }
 
-    Cursor cari_idObat(String nama){
-        String query = "SELECT id_obat FROM Obat WHERE nama_obat='"+nama+"'";
+    public void insert_Riwayat(ArrayList<String> nama_obat, ArrayList<Integer> harga_obat){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        for(int i = 0; i < nama_obat.size(); i++){
+            contentValues.put("nama_obat", nama_obat.get(i));
+            contentValues.put("harga_obat", harga_obat.get(i));
+        }
+        long data = db.insert("Riwayat", null, contentValues);
+    }
+
+    Cursor readPesanan(){
+        String query = "SELECT Pesanan.id_akun, Obat.nama_obat, Obat.harga FROM Obat INNER JOIN Pesanan ON Pesanan.id_obat = Obat.id_obat";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
         if(db != null){
@@ -91,8 +102,8 @@ public class ApotechDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    Cursor readPesanan(){
-        String query = "SELECT Pesanan.id_akun, Obat.nama_obat, Obat.harga FROM Obat INNER JOIN Pesanan ON Pesanan.id_obat = Obat.id_obat";
+    Cursor readRiwayat(){
+        String query = "SELECT * FROM Riwayat";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
         if(db != null){
@@ -134,11 +145,16 @@ public class ApotechDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    void deleteAllDataPesanan()
-    {
-        SQLiteDatabase sdb= this.getWritableDatabase();
-        sdb.delete("Pesanan", null, null);
 
+    Cursor deleteAllPesanan(){
+        String query = "DELETE FROM Pesanan";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 
     Cursor deleteAllAkun(){
@@ -154,6 +170,17 @@ public class ApotechDatabaseHelper extends SQLiteOpenHelper {
 
     Cursor deleteAllObat(){
         String query = "DELETE FROM Obat";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    Cursor deleteAllRiwayat(){
+        String query = "DELETE FROM Riwayat";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;

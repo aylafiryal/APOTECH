@@ -20,7 +20,6 @@ public class DaftarKeranjangAdapter extends RecyclerView.Adapter<DaftarKeranjang
     private Context context;
     private ArrayList listKeranjang_namaObat, listKeranjang_hargaObat, listKeranjang_idAkun;
     private ArrayList position;
-    private Pesanan psn;
 
 
     DaftarKeranjangAdapter(Context context, ArrayList listKeranjang_namaObat, ArrayList listKeranjang_hargaObat, ArrayList listKeranjang_idAkun){
@@ -28,7 +27,6 @@ public class DaftarKeranjangAdapter extends RecyclerView.Adapter<DaftarKeranjang
         this.listKeranjang_namaObat = listKeranjang_namaObat;
         this.listKeranjang_hargaObat = listKeranjang_hargaObat;
         this.listKeranjang_idAkun = listKeranjang_idAkun;
-        psn = new Pesanan();
     }
 
 

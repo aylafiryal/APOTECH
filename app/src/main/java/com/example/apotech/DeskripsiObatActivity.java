@@ -24,7 +24,6 @@ public class DeskripsiObatActivity extends AppCompatActivity {
     Button btn_beliSekarang, btn_keranjang;
     ApotechDatabaseHelper db;
     Akun akun;
-    Pesanan pesanan;
     int id_obatDipilih;
     ArrayList<String> namaObatDipilih, farmasiObatDipilih, expireObatDipilih;
 
@@ -62,9 +61,6 @@ public class DeskripsiObatActivity extends AppCompatActivity {
         id_Obat = new ArrayList<>();
         id_Obatsakit = new ArrayList<>();
         obat_stok = new ArrayList<>();
-
-        pesanan = new Pesanan();
-
         displayDeskripsiObat();
 
         namaObat_deskripsi = (TextView) findViewById(R.id.tv_deskripsi_nama_obat);

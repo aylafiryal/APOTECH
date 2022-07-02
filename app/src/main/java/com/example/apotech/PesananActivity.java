@@ -19,9 +19,6 @@ import java.util.ArrayList;
 
 public class PesananActivity extends AppCompatActivity {
 
-    Intent intent;
-    Bundle args;
-
     RecyclerView rv;
     ApotechDatabaseHelper db;
     Button btn_bayar;
@@ -35,22 +32,12 @@ public class PesananActivity extends AppCompatActivity {
     // Pesanan
     ArrayList<String> pesanan2_namaObat;
     ArrayList<Integer> pesanan2_hargaObat, pesanan2_id;
-    Pesanan pesanan;
-    int i;
 
-
-//    ArrayList<String> namaObatDipilih, farmasiObatDipilih, expireObatDipilih;
-//    ArrayList<String> obat_expire;
-//    ArrayList<Integer> id_Obat, id_Obatsakit, obat_harga, obat_stok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.halaman_pesanan);
-
-//        intent = getIntent();
-//        args = intent.getBundleExtra("BUNDLE");
-//        ArrayList<Integer> id = (ArrayList<Integer>) args.getSerializable("ARRAYLIST");
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
@@ -65,30 +52,14 @@ public class PesananActivity extends AppCompatActivity {
         pesanan_alamatPembeli = new ArrayList<>();
         displayAkun();
 
-        // Obat
-//        pesanan = new Pesanan();
-//        i = id.get(0);
-//        namaObatDipilih = new ArrayList<>();
-//        farmasiObatDipilih = new ArrayList<>();
-//        expireObatDipilih = new ArrayList<>();
-//        obat_harga = new ArrayList<>();
-//        obat_expire = new ArrayList<>();
-//        id_Obat = new ArrayList<>();
-//        id_Obatsakit = new ArrayList<>();
-//        obat_stok = new ArrayList<>();
-        //displayDeskripsiObat();
-        //total(obat_harga);
-
         // Pesanan
         pesanan2_namaObat = new ArrayList<>();
         pesanan2_hargaObat = new ArrayList<>();
         pesanan2_id = new ArrayList<>();
         displayPesananObat();
         total(pesanan2_hargaObat);
-//        int i = hitungTotalPesanan();
 
         rv = findViewById(R.id.rv_pesanan_obat);
-//        DaftarPesananAdapter adapter = new DaftarPesananAdapter(this, namaObatDipilih, obat_harga, id);
         DaftarPesananAdapter adapter = new DaftarPesananAdapter(this, pesanan2_namaObat, pesanan2_hargaObat, pesanan2_id);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
@@ -97,7 +68,9 @@ public class PesananActivity extends AppCompatActivity {
         btn_bayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PesananActivity.this, SelesaiActivity.class));
+                db.insert_Riwayat(pesanan2_namaObat, pesanan2_hargaObat);
+                db.close();
+                startActivity(new Intent(PesananActivity.this, PengirimanActivity.class));
             }
         });
 
@@ -138,26 +111,6 @@ public class PesananActivity extends AppCompatActivity {
         }
     }
 
-//    void displayDeskripsiObat(){
-//        Cursor cursor = db.readOneObat(i);
-//
-//        if(cursor.getCount() == 0){
-//            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
-//        } else {
-//            while (cursor.moveToNext()){
-//                //int id_obat, String nama_obat, int id_sakit, String farmasi, String expire_date, int harga, int stok
-//                id_Obat.add(cursor.getInt(0));
-//                namaObatDipilih.add(cursor.getString(1));
-//                id_Obatsakit.add(cursor.getInt(2));
-//                farmasiObatDipilih.add(cursor.getString(3));
-//                obat_expire.add(cursor.getString(4));
-//                obat_harga.add(cursor.getInt(5));
-//                obat_stok.add(cursor.getInt(6));
-//            }
-//            cursor.close();
-//        }
-//    }
-
     void total(ArrayList<Integer> harga){
         for (int i = 0; i < harga.size(); i++){
             total = total + harga.get(i);
@@ -171,7 +124,6 @@ public class PesananActivity extends AppCompatActivity {
             Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()){
-                //int id_obat, String nama_obat, int id_sakit, String farmasi, String expire_date, int harga, int stok
                 pesanan2_id.add(cursor.getInt(0));
                 pesanan2_namaObat.add(cursor.getString(1));
                 pesanan2_hargaObat.add(cursor.getInt(2));

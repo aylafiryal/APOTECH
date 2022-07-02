@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
         pasien = new Akun();
         obat = new Obat();
 
-        db.deleteAllDataPesanan();
+        db.deleteAllPesanan();
         db.deleteAllAkun();
         db.deleteAllObat();
+        db.deleteAllRiwayat();
 
         // Insert data kategori sakit
         int [] idSakit_array = {1, 2, 3, 4, 5};

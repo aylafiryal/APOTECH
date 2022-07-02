@@ -43,7 +43,7 @@ public class DaftarObatAdapter extends RecyclerView.Adapter<DaftarObatAdapter.Da
         holder.nama_obat.setText(String.valueOf(obat_nama.get(position)));
         holder.farmasi_obat.setText(String.valueOf(obat_farmasi.get(position)));
         holder.harga_obat.setText(String.valueOf(obat_harga.get(position)));
-        //holder.foto_obat.setImageResource(Integer.valueOf(list_foto.get(position)));
+        holder.foto_obat.setImageResource(obat.getFoto(position));
 
     }
 
@@ -67,13 +67,6 @@ public class DaftarObatAdapter extends RecyclerView.Adapter<DaftarObatAdapter.Da
             beli_btn = itemView.findViewById(R.id.btn_beli);
             beli_btn.setOnClickListener(this);
             this.clickBeli = clickBeli;
-
-            /*list_foto.add(R.drawable.apotech1);
-            list_foto.add(R.drawable.apotech2);
-            list_foto.add(R.drawable.apotech3);
-            list_foto.add(R.drawable.apotech4);
-            list_foto.add(R.drawable.apotech5);
-            list_foto.add(R.drawable.apotech6);*/
         }
 
         @Override

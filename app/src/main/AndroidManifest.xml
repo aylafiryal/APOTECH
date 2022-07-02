@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APOTECH">
         <activity
+            android:name=".RiwayatActivity"
+            android:exported="false" />
+        <activity
             android:name=".DeskripsiObatActivity"
             android:exported="false" />
         <activity
@@ -29,10 +32,16 @@
         </activity>
         <activity
             android:name=".PesananActivity"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
         <activity
             android:name=".KeranjangActivity"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".PengirimanActivity"
+            android:exported="false" >
+        </activity>
     </application>
 
 </manifest>

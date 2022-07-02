@@ -1,6 +1,15 @@
 package com.example.apotech;
 
 public class Obat {
+
+    int [] foto = {
+            R.drawable.apotech1, R.drawable.apotech2, R.drawable.apotech3,
+            R.drawable.apotech4, R.drawable.apotech5, R.drawable.apotech6,
+            R.drawable.apotech7, R.drawable.apotech8, R.drawable.apotech9,
+            R.drawable.apotech10, R.drawable.apotech11, R.drawable.apotech12,
+            R.drawable.apotech13, R.drawable.apotech14, R.drawable.apotech15
+    };
+
     int [] id_sakit = {
             1, 2, 3, 4, 5
     };
@@ -76,5 +85,8 @@ public class Obat {
         return id_sakit[i];
     }
 
+    public int getFoto(int i){
+        return foto[i];
+    }
 
 }

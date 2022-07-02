@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ public class UtamaActivity extends AppCompatActivity implements DaftarObatAdapte
     ArrayList<Integer> id_obatDipilih;
     DaftarObatAdapter daftarObatAdapter;
     ImageView keranjang;
+    EditText searchBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

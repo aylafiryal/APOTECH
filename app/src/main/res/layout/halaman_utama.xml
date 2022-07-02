@@ -7,64 +7,49 @@
     android:layout_height="match_parent"
     tools:context=".UtamaActivity">
 
-    <TextView
-        android:id="@+id/Judul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="APOTECH"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_keranjang"
-        android:layout_width="30dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-25dp"
+        android:layout_marginStart="-25dp"
+        app:layout_constraintStart_toEndOf="@id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_keranjang"
+        android:src="@drawable/ic_baseline_filter_alt_24"/>
+
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
+        android:layout_width="290dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_margin="15dp"
         android:background="#F8F7F7"
         android:drawableLeft="@drawable/ic_baseline_search_24"
         android:drawablePadding="12dp"
         android:ems="10"
         android:hint="Cari obat disini"
         android:inputType="textPersonName"
-        android:paddingStart="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Judul" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_daftar_obat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="600dp"
+        android:layout_margin="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_daftar_obat"
-            tools:listitem="@layout/daftar_obat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        tools:listitem="@layout/daftar_obat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

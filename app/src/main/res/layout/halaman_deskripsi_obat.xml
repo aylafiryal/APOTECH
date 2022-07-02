@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="5dp"
-            android:text="Farmasi    :"
+            android:text="Farmasi         :"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_deskripsi_nama_obat" />
@@ -65,10 +65,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="5dp"
-            android:text="Dosis        :"
+            android:text="Dosis             :"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_deskripsi_farmasi" />
+
+        <TextView
+            android:id="@+id/tv_expire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Expire Date   :"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_deskripsi_dosis" />
 
         <TextView
             android:id="@+id/tv_deskripsi_dosis_obat"
@@ -82,16 +93,35 @@
             app:layout_constraintStart_toStartOf="@+id/tv_deskripsi_farmasi_obat"
             tools:layout_editor_absoluteY="337dp" />
 
-        <TextView
-            android:id="@+id/tv_deskripsi_obat"
+            <TextView
+                android:id="@+id/tv_expire_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xx mm yyyy"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_deskripsi_dosis_obat"
+                app:layout_constraintStart_toStartOf="@+id/tv_deskripsi_dosis_obat"
+                tools:layout_editor_absoluteY="337dp" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum"
+            android:layout_height="210dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_deskripsi_dosis"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_expire"
+            app:layout_constraintStart_toStartOf="parent">
+            <TextView
+                android:id="@+id/tv_deskripsi_obat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/lorem_ipsum"
+                app:layout_constraintTop_toBottomOf="@id/tv_deskripsi_dosis"
+                app:layout_constraintStart_toStartOf="parent"/>
+        </ScrollView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
@@ -122,7 +152,4 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
     </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,9 @@
         <activity
             android:name=".PesananActivity"
             android:exported="false" />
+        <activity
+            android:name=".KeranjangActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

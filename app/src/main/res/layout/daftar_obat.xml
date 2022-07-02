@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="perindo"
+            android:maxLines="1"
             android:textStyle="italic"/>
 
         <TextView
@@ -45,6 +46,7 @@
             android:id="@+id/btn_beli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Beli" />
+            android:text="Beli"
+            android:layout_gravity="bottom"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

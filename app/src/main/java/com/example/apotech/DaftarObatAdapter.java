@@ -8,15 +8,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class DaftarObatAdapter extends RecyclerView.Adapter<DaftarObatAdapter.MyViewHolder> {
+public class DaftarObatAdapter extends RecyclerView.Adapter<DaftarObatAdapter.DaftarObatViewHolder> {
 
     private Context context;
+    private Obat obat = new Obat();
     private ArrayList obat_nama, obat_farmasi, obat_harga, id_obat, foto_obat;
     private ClickBeli clickBeli;
     //private ArrayList<Integer> list_foto = new ArrayList<Integer>();
@@ -32,14 +32,14 @@ public class DaftarObatAdapter extends RecyclerView.Adapter<DaftarObatAdapter.My
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DaftarObatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.daftar_obat, parent, false);
-        return new MyViewHolder(view, clickBeli);
+        return new DaftarObatViewHolder(view, clickBeli);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DaftarObatViewHolder holder, int position) {
         holder.nama_obat.setText(String.valueOf(obat_nama.get(position)));
         holder.farmasi_obat.setText(String.valueOf(obat_farmasi.get(position)));
         holder.harga_obat.setText(String.valueOf(obat_harga.get(position)));
@@ -49,16 +49,16 @@ public class DaftarObatAdapter extends RecyclerView.Adapter<DaftarObatAdapter.My
 
     @Override
     public int getItemCount() {
-        return id_obat.size();
+        return obat.id_obat.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class DaftarObatViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView nama_obat, farmasi_obat, harga_obat;
         ImageView foto_obat;
         Button beli_btn;
         ClickBeli clickBeli;
 
-        public MyViewHolder(@NonNull View itemView, ClickBeli clickBeli) {
+        public DaftarObatViewHolder(@NonNull View itemView, ClickBeli clickBeli) {
             super(itemView);
             nama_obat = itemView.findViewById(R.id.tv_nama_obat);
             farmasi_obat = itemView.findViewById(R.id.tv_farmasi);

@@ -19,6 +19,7 @@ public class UtamaActivity extends AppCompatActivity implements DaftarObatAdapte
     ApotechDatabaseHelper db;
     ArrayList<String> obat_nama, obat_farmasi, obat_expire;
     ArrayList<Integer> id_Obat, id_Obatsakit, obat_harga, obat_stok;
+    ArrayList<Integer> id_obatDipilih;
     DaftarObatAdapter daftarObatAdapter;
     ImageView keranjang;
 
@@ -35,6 +36,7 @@ public class UtamaActivity extends AppCompatActivity implements DaftarObatAdapte
         id_Obat = new ArrayList<>();
         id_Obatsakit = new ArrayList<>();
         obat_stok = new ArrayList<>();
+        id_obatDipilih = new ArrayList<>();
 
         displayObat();
 
@@ -49,7 +51,7 @@ public class UtamaActivity extends AppCompatActivity implements DaftarObatAdapte
         keranjang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UtamaActivity.this, PesananActivity.class));
+                startActivity(new Intent(UtamaActivity.this, KeranjangActivity.class));
             }
         });
 
@@ -75,7 +77,12 @@ public class UtamaActivity extends AppCompatActivity implements DaftarObatAdapte
 
     @Override
     public void clickBeli(int position) {
-        Intent intent = new Intent(this,DeskripsiObatActivity.class);
+        Intent intent = new Intent(this, DeskripsiObatActivity.class);
+        position = position + 1;
+        intent.putExtra("id_obatDipilih", position);
         startActivity(intent);
+
+        /*Intent intent = new Intent(this,DeskripsiObatActivity.class);
+        startActivity(intent);*/
     }
 }

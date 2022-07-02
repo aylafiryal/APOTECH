@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/bullet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -13,21 +16,44 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/nama_obat"
+        android:id="@+id/tv_nama_obat_pesanan"
+        app:layout_constraintStart_toEndOf="@id/bullet"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="-5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:text="nama obat"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/harga_obat"
+        android:id="@+id/tv_harga_obat_pesanan"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama_obat_pesanan"
+        app:layout_constraintStart_toEndOf="@id/bullet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-7dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:text="harga obat"
-        android:textSize="20sp"
-        android:layout_marginStart="140dp"
-        />
-</LinearLayout>
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_banyak_obat_pesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama_obat_pesanan"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="300dp"
+        android:text="1"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tv_banyak_obat_pesanan"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama_obat_pesanan"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="7dp"
+        android:text="strip"
+        android:textSize="20sp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
